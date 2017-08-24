@@ -1,0 +1,32 @@
+{
+  "name": "@ibm-design/charts",
+  "version": "0.0.0",
+  "description": "Code implementations of the IBM Design Language's data visualization guidance.",
+  "repository": {
+    "url": "https://github.com/IBM-Design/charts.git",
+    "type": "git"
+  },
+  "license": "Apache-2.0",
+  "scripts": {
+    "bootstrap": "lerna bootstrap && lerna run build",
+    "examples": "node examples/server.js",
+    "gh-pages": "yarn run gh-pages:clean && yarn run gh-pages:build && yarn run gh-pages:copy && yarn run gh-pages:publish",
+    "gh-pages:build": "lerna run storybook:build",
+    "gh-pages:clean": "rimraf _gh-pages",
+    "gh-pages:copy": "cp public/* _gh-pages/$1",
+    "gh-pages:publish": "git-directory-deploy --directory _gh-pages",
+    "lerna": "lerna",
+    "test": "eslint packages"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "eslint": "^3.13.1",
+    "eslint-plugin-babel": "^4.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "express": "^4.14.0",
+    "git-directory-deploy": "^1.5.1",
+    "jest-cli": "^18.1.0",
+    "lerna": "2.0.0-beta.32",
+    "rimraf": "^2.5.4"
+  }
+}
